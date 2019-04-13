@@ -1,33 +1,92 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+body {
+  margin: 0px;
+  background: black;
   color: white;
+  font-family: 'Roboto', sans-serif;
+}
+.App{
+  text-align: center;
+  font-size: 35px;
+  margin-top: 25vh;
+}
+.App h2{
+  margin: 0px;
+  font-weight: unset;
+  text-transform: capitalize;
+}
+.App h2 span{
+  color: #e8491d;
+}
+.App .clockContainer{
+  margin-top: 10px;
+}
+.Clock-days, .Clock-hours, .Clock-minutes, .Clock-seconds{
+  display: inline;
+  margin: 10px;
+}
+.clockContainer span{
+  color: lightgrey;
+  opacity: 0.5;
+}
+.App .formContainer{
+  margin: 30px 0px;
+}
+.App .formContainer input[type="text"]{
+  width: 270px;
+  height: 25px;
+  border: 2px solid #e8491d;
+  font-size: 20px;
+  border-radius: 3px;
+  padding: 10px;
+}
+.App .formContainer input[type="text"]:focus, .App .formContainer button:focus{
+  outline: none;
+}
+.App .formContainer button{
+  cursor: pointer;
+  font-size: 20px;
+  padding: 10px 20px;
+  border-radius: 24px;
+  border: 2px solid #e8491d;
+  margin: 0px 30px;
+}
+.App .formContainer button:hover{
+  background: #e8491d;
+  color: #ffffff;
+}
+/* Blinking error message */
+.App .errorMessage{
+  display: inline-block;
+  font-size: 18px;
+  color: #FF5722;
+  animation: errorMessage 2s linear infinite;
+}
+@keyframes errorMessage{
+  0%{opacity: 0;}
+  50%{opacity: .5;}
+  100%{opacity: 1;}
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Media query for mobile*/
+@media (max-width: 600px){
+  .App{
+    margin-top: 15vh;
+    padding: 0px 8px;
   }
-  to {
-    transform: rotate(360deg);
+  .App h2{
+    font-size: 40px;
+  }
+  .App h2 span{
+    display: block;
+  }
+  .App .clockContainer{
+    font-size: 24px;
+  }
+  .App .formContainer{
+    margin: 20px 0px;
+  }
+  .App .formContainer button{
+    margin: 10px 0px
   }
 }
